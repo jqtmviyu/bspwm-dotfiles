@@ -1,0 +1,42 @@
+"语法高亮
+syntax on
+"显示行号
+set nu
+"启动时隐去援助提示
+set shortmess=atI
+"显示匹配
+set showmatch
+"搜索忽略大小写
+set ic
+"显示文件名和路径
+set laststatus=2
+"自动对齐
+set autoindent
+"显示输入的命令
+set showcmd
+"错误时屏幕不要闪烁
+set novisualbell
+"显示标尺，就是在右下角显示光标位置
+set ruler
+"共享剪切板
+set clipboard^=unnamed,unnamedplus
+"修改编辑模式光标样式
+if has("autocmd")
+  au InsertEnter * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_BLOCK/TERMINAL_CURSOR_SHAPE_IBEAM/' ~/.config/xfce4/terminal/terminalrc"
+  au InsertLeave * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_IBEAM/TERMINAL_CURSOR_SHAPE_BLOCK/' ~/.config/xfce4/terminal/terminalrc"
+  au VimLeave * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_UNDERLINE/TERMINAL_CURSOR_SHAPE_IBEAM/' ~/.config/xfce4/terminal/terminalrc"
+endif
+
+"vim中自动切换输入法
+"let fcitx5state=system("fcitx5-remote")
+" 退出插入模式时禁用输入法，并保存状态
+"autocmd InsertLeave * :silent let fcitx5state=system("fcitx5-remote")[0] | silent !fcitx5-remote -c
+" 2 表示之前状态打开了输入法，则进入插入模式时启动输入法
+"autocmd InsertEnter * :silent if fcitx5state == 2 | call system("fcitx5-remote -o") | endif
+
+if has("autocmd")
+  "刚进入vim就切换成英文
+  :silent call system("busctl call --user org.fcitx.Fcitx5 /rime org.fcitx.Fcitx.Rime1 SetAsciiMode b true")
+  "退出插入模式切换成英文
+  au InsertLeave * :silent call system("busctl call --user org.fcitx.Fcitx5 /rime org.fcitx.Fcitx.Rime1 SetAsciiMode b true")
+endif

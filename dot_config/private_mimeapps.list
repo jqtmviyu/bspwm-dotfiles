@@ -1,0 +1,23 @@
+[Added Associations]
+application/octet-stream=gcr-viewer.desktop;
+text/plain=gvim.desktop;vim.desktop;code.desktop;xed.desktop;
+image/jpeg=org.xfce.ristretto.desktop;gpicview.desktop;feh.desktop;
+image/png=gpicview.desktop;
+text/markdown=typora.desktop;visual-studio-code.desktop;
+application/x-shellscript=vim.desktop;notepadqq.desktop;code.desktop;
+application/vnd.appimage=xfce4-terminal.desktop;
+image/gif=org.xfce.ristretto.desktop;gpicview.desktop;
+application/x-zerosize=vim.desktop;
+application/x-bittorrent=xdman.desktop;
+
+[Default Applications]
+text/plain=gvim.desktop
+image/png=gpicview.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+application/vnd.appimage=xfce4-terminal.desktop
+application/x-zerosize=vim.desktop
+application/x-bittorrent=xdman.desktop

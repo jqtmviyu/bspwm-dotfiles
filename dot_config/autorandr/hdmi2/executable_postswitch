@@ -1,0 +1,7 @@
+#! /bin/sh
+sleep 5 
+nitrogen --restore
+bspc monitor HDMI2 -d I II III IV V VI 
+bspc monitor eDP1 -d VII 
+sleep 2
+~/.config/polybar/launch.sh

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=keymap
+Encoding=UTF-8
+Exec=/bin/bash -c "/usr/bin/xmodmap ~/.Xmodmap; xcape -e 'Mode_switch=Escape'"
+Icon=application-default-icon
+Hidden=false
+X-GNOME-Autostart-enabled=true
